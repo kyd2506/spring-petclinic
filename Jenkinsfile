@@ -14,13 +14,12 @@ pipeline {
    stage('mvn build') {
      steps {
        sh 'mvn -Dmaven.test.failure.ignore=true install'
-  }
+     }
   post {
     success {
-    junit '**/target/surefire-reports/TEST-*.yml'
-      }
+      junit '**/target/surefire-reports/TEST-*.yml'
+     }
     }
+   }
   }
-
- }
 }
