@@ -6,7 +6,7 @@ pipeline {
   }
   environment {
     AWS_CREDENTIALS_NAME = "AWSCredentials"
-    REGION = "ap-northeast-2"
+    RESION = "ap-northeast-2"
     DOCKER_IMAGE_NAME = "aws14-spring-petclinic"
     DOCKER_TAG = "1.0"
     ECR_REPOSITORY = "257307634175.dkr.ecr.ap-northeast-2.amazonaws.com"
@@ -44,7 +44,7 @@ pipeline {
         script {
           sh 'rm -f ~/.dockercfg ~/.docker/config.json || true'
 
-          docker.withRegistry("https://${ECR_REPOSITORY}", "ecr:${REGION}:${AWS_CREDENTIALS_NAME}") {
+          docker.withRegistry("https://${ECR_REPOSITORY}", "ecr:${RESION}:${AWS_CREDENTIALS_NAME}") {
             docker.image("${DOCKER_IMAGE_NAME}:${DOCKER_TAG}").push()
           }
         }
