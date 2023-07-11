@@ -17,9 +17,10 @@ pipeline {
      }
   post {
     success {
-      junit '**/target/surefire-reports/TEST-*.yml'
+      junit '**/target/surefire-reports/TEST-*.xml'
      }
     }
    }
+    
   }
 }
