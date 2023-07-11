@@ -48,6 +48,3 @@ pipeline {
             docker.image("${DOCKER_IMAGE_NAME}:${DOCKER_TAG}").push()
           }
         }
-      }
-    }
-                    
